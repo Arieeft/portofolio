@@ -28,7 +28,7 @@ class PengController extends Controller
         return view('pengalamans.create');
     }
 
-    public function store (Request $request): RedirectResponse
+    public function store (Request $request)
     {
         $this->validate($request, [
             'perusahaan' => 'required',
@@ -43,8 +43,8 @@ class PengController extends Controller
         'tahun' => $request->year,
         'deskripsi' => $request->desc,
         ]);
-
-    return redirect()->route('pengalamans.index')
+        dd($data);
+    return redirect()->route('pengidex')
     ->with(['success' => 'Data Berhasil Disimpan!']);
     }
 

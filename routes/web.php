@@ -9,3 +9,5 @@ Route::get('/', function () {
 });
 
 Route::get('/pengalamans', [PengController::class, 'showPengalaman'])->name('pengalamans');
+Route::get('/pengalaman_index', [PengController::class, 'index'])->name('pengindex');
+Route::post('/pengalaman_post', [PengController::class, 'store'])->name('pengpost');

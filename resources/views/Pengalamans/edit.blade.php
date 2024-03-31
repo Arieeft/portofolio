@@ -14,17 +14,17 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('pengalamans.update', $pengalaman->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
                             <div class="form-group">
-                                <label class="font-weight-bold">NAMA PRODUK</label>
-                                <input type="text" class="form-control @error('name') is-invalid 
-                                @enderror" name="name" value="{{ old('name', $post->name) }}" 
-                                placeholder="Masukkan Nama Produk">
+                                <label class="font-weight-bold">PERUSAHAAN</label>
+                                <input type="text" class="form-control @error('comp') is-invalid 
+                                @enderror" name="comp" value="{{ old('comp', $pengalaman->comp) }}" 
+                                placeholder="Masukkan Nama Perusahaan">
                             
-                                @error('name')
+                                @error('comp')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -32,38 +32,38 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">DESKRIPSI PRODUK</label>
+                                <label class="font-weight-bold">PEKERJAAN</label>
+                                <input type="text" class="form-control @error('job') is-invalid 
+                                @enderror" name="job" value="{{ old('job', $pengalaman->job) }}" 
+                                placeholder="Masukkan Pekerjaan">
+                            
+                                @error('job')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">TAHUN</label>
+                                <input type="text" class="form-control @error('year') is-invalid 
+                                @enderror" name="year" value="{{ old('year', $pengalaman->year) }}" 
+                                placeholder="Masukkan Tahun">
+                            
+                                @error('year')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">DESKRIPSI</label>
                                 <input type="text" class="form-control @error('desc') is-invalid 
-                                @enderror" name="desc" value="{{ old('desc', $post->desc) }}" 
-                                placeholder="Masukkan Deskripsi Produk">
+                                @enderror" name="desc" value="{{ old('desc', $pengalaman->desc) }}" 
+                                placeholder="Masukkan Deskripsi Pekerjaan">
                             
                                 @error('desc')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">HARGA PRODUK</label>
-                                <input type="text" class="form-control @error('price') is-invalid 
-                                @enderror" name="price" value="{{ old('price', $post->price) }}" 
-                                placeholder="Masukkan Harga Produk">
-                            
-                                @error('price')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">STOCK PRODUK</label>
-                                <input type="text" class="form-control @error('stock') is-invalid 
-                                @enderror" name="stock" value="{{ old('stock', $post->stock) }}" 
-                                placeholder="Masukkan Stock Produk">
-                            
-                                @error('stock')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
