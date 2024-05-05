@@ -7,24 +7,24 @@
     <title>UPDATE DATA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body style="background: #DDECED">
+<body style="background: #f8f9fa">
 
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <form action="{{ route('pengalamans.update', $pengalaman->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('edukasis.update', $edukasi->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
                             <div class="form-group">
-                                <label class="font-weight-bold">PERUSAHAAN</label>
-                                <input type="text" class="form-control @error('comp') is-invalid 
-                                @enderror" name="comp" value="{{ old('comp', $pengalaman->perusahaan) }}" 
-                                placeholder="Masukkan Nama Perusahaan">
+                                <label class="font-weight-bold">SEKOLAH</label>
+                                <input type="text" class="form-control @error('sch') is-invalid 
+                                @enderror" name="sch" value="{{ old('sch', $edukasi->sekolah) }}" 
+                                placeholder="Masukkan Nama Sekolah">
                             
-                                @error('comp')
+                                @error('sch')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -32,12 +32,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">PEKERJAAN</label>
-                                <input type="text" class="form-control @error('job') is-invalid 
-                                @enderror" name="job" value="{{ old('job', $pengalaman->pekerjaan) }}" 
+                                <label class="font-weight-bold">JURUSAN</label>
+                                <input type="text" class="form-control @error('jur') is-invalid 
+                                @enderror" name="jur" value="{{ old('jur', $edukasi->jurusan) }}" 
                                 placeholder="Masukkan Pekerjaan">
                             
-                                @error('job')
+                                @error('jur')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">TAHUN</label>
                                 <input type="text" class="form-control @error('year') is-invalid 
-                                @enderror" name="year" value="{{ old('year', $pengalaman->tahun) }}" 
+                                @enderror" name="year" value="{{ old('year', $edukasi->tahun) }}" 
                                 placeholder="Masukkan Tahun">
                             
                                 @error('year')
@@ -56,20 +56,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">DESKRIPSI</label>
-                                <input type="text" class="form-control @error('desc') is-invalid 
-                                @enderror" name="desc" value="{{ old('desc', $pengalaman->deskripsi) }}" 
-                                placeholder="Masukkan Deskripsi Pekerjaan">
-                            
-                                @error('desc')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
                             <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
 

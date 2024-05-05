@@ -31,10 +31,10 @@ class PengController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
-            'perusahaan' => 'required',
-            'pekerjaan' => 'required',
-            'tahun' => 'required',            
-            'deskripsi' => 'required',
+            'comp' => 'required',
+            'job' => 'required',
+            'year' => 'required',            
+            'desc' => 'required',
             ]);
 
     $data=Pengalaman::create([
@@ -43,8 +43,8 @@ class PengController extends Controller
         'tahun' => $request->year,
         'deskripsi' => $request->desc,
         ]);
-        dd($data);
-    return redirect()->route('pengidex')
+
+    return redirect()->route('pengindex')
     ->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
@@ -66,10 +66,10 @@ class PengController extends Controller
     public function update(Request $request, $id): RedirectResponse
     {
         $this->validate($request, [
-            'perusahaan' => 'required',
-            'pekerjaan' => 'required',
-            'tahun' => 'required',            
-            'deskripsi' => 'required',
+            'comp' => 'required',
+            'job' => 'required',
+            'year' => 'required',            
+            'desc' => 'required',
         ]);
 
         $pengalaman = Pengalaman::findOrFail($id);
@@ -81,7 +81,7 @@ class PengController extends Controller
                 'deskripsi' => $request->desc,
             ]);
         
-        return redirect()->route('pengalamans.index')
+        return redirect()->route('pengindex')
         ->with(['success' => 'Data Berhasil Diubah!']);
     }
 
@@ -91,7 +91,7 @@ class PengController extends Controller
         Storage::delete('public/posts/'. $pengalaman->image);
         $pengalaman->delete();
         
-        return redirect()->route('pengalamans.index')
+        return redirect()->route('pengindex')
         ->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

@@ -32,7 +32,6 @@
             background-color: #828282;
         }
     </style>
-    <!-- Favicon -->
 </head>
 <body>
 
@@ -47,12 +46,10 @@
                         <li class="nav-item">
                             <br><center><h5>Admin Profile</h5></center>
                             <hr class="new4">
-                            <div class="bg-secondary">
                             <div class="hover-bg">
                             <a class="nav-link active mt-2" href="{{ route('pengindex') }}">
                             <div class=""><i class="ri-article-line mr-2"></i>Experience</div>
                             </a>
-                            </div>
                             </div>
                         </li>
                         <li class="nav-item hover-bg">
@@ -65,37 +62,33 @@
                             <div class=""><i class="ri-computer-line mr-2"></i>Skills</div>
                             </a>
                         </li>
+                        <div class="bg-secondary">
                         <li class="nav-item hover-bg">
                             <a class="nav-link" href="{{ route('serindex') }}">
                             <div class=""><i class="ri-award-line mr-2"></i>Certification</div>
                             </a>
+                        </div>
                         </li>
                     </ul>
                 </div>
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
-                <a href="{{ route('pengalamans.create') }}" class="btn btn-md btn-primary mb-3">TAMBAH</a>
+                <a href="{{ route('sertifikats.create') }}" class="btn btn-md btn-primary mb-3">TAMBAH</a>
                 <table class="table table-bordered">
                     <thead>
                       <tr class="text-center">
-                        <th scope="col">COMPANY</th>
-                        <th scope="col">JOB</th>
-                        <th scope="col">YEAR</th>
-                        <th scope="col">JOB DESCRIPTION</th>
+                        <th scope="col">CERTIFICATION</th>
                         <th scope="col">ACTION</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @forelse ($pengalamans as $pengalaman)
+                      @forelse ($sertifikats as $sertifikat)
                         <tr class="text-center">
-                            <td>{{ $pengalaman->perusahaan }}</td>
-                            <td>{!! $pengalaman->pekerjaan !!}</td>
-                            <td>{{ $pengalaman->tahun }}</td>
-                            <td>{{ $pengalaman->deskripsi }}</td>
+                            <td>{{ $sertifikat->sertifikat }}</td>
                             <td class="text-center">
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengalamans.destroy', $pengalaman->id) }}" method="POST">
-                                    <a href="{{ route('pengalamans.edit', $pengalaman->id) }}" class="btn btn-sm btn-primary">UPDATE</a>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('sertifikats.destroy', $sertifikat->id) }}" method="POST">
+                                    <a href="{{ route('sertifikats.edit', $sertifikat->id) }}" class="btn btn-sm btn-primary">UPDATE</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">DELETE</button>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> EXPERIENCE ADMIN PAGE</title>
+    <title>EDUCATION ADMIN PAGE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <style>
@@ -47,55 +47,57 @@
                         <li class="nav-item">
                             <br><center><h5>Admin Profile</h5></center>
                             <hr class="new4">
-                            <div class="bg-secondary">
                             <div class="hover-bg">
                             <a class="nav-link active mt-2" href="{{ route('pengindex') }}">
-                            <div class=""><i class="ri-article-line mr-2"></i>Experience</div>
+                            <i class="ri-article-line mr-2"></i>Experience
                             </a>
-                            </div>
-                            </div>
+                            </div> 
                         </li>
-                        <li class="nav-item hover-bg">
+                        <li class="nav-item bg-secondary">
+                        <div class="hover-bg">
                             <a class="nav-link" href="{{ route('eduindex') }}">
-                            <div class=""><i class="ri-graduation-cap-line mr-2"></i>Education</div>
+                            <i class="ri-graduation-cap-line mr-2"></i>Education
                             </a>
+                            </div>
                         </li>
-                        <li class="nav-item hover-bg">
+                        <li class="nav-item">
+                        <div class="hover-bg">
                             <a class="nav-link" href="{{ route('skindex') }}">
-                            <div class=""><i class="ri-computer-line mr-2"></i>Skills</div>
+                            <i class="ri-computer-line mr-2"></i>Skills
                             </a>
+                            </div>
                         </li>
-                        <li class="nav-item hover-bg">
+                        <li class="nav-item">
+                        <div class="hover-bg">
                             <a class="nav-link" href="{{ route('serindex') }}">
-                            <div class=""><i class="ri-award-line mr-2"></i>Certification</div>
+                            <i class="ri-award-line mr-2"></i>Certification
                             </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
-                <a href="{{ route('pengalamans.create') }}" class="btn btn-md btn-primary mb-3">TAMBAH</a>
+                <a href="{{ route('edukasis.create') }}" class="btn btn-md btn-primary mb-3">TAMBAH</a>
                 <table class="table table-bordered">
                     <thead>
                       <tr class="text-center">
-                        <th scope="col">COMPANY</th>
-                        <th scope="col">JOB</th>
+                        <th scope="col">SCHOOL</th>
+                        <th scope="col">MAJOR</th>
                         <th scope="col">YEAR</th>
-                        <th scope="col">JOB DESCRIPTION</th>
                         <th scope="col">ACTION</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @forelse ($pengalamans as $pengalaman)
+                      @forelse ($edukasis as $edukasi)
                         <tr class="text-center">
-                            <td>{{ $pengalaman->perusahaan }}</td>
-                            <td>{!! $pengalaman->pekerjaan !!}</td>
-                            <td>{{ $pengalaman->tahun }}</td>
-                            <td>{{ $pengalaman->deskripsi }}</td>
+                            <td>{{ $edukasi->sekolah }}</td>
+                            <td>{!! $edukasi->jurusan !!}</td>
+                            <td>{{ $edukasi->tahun }}</td>
                             <td class="text-center">
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengalamans.destroy', $pengalaman->id) }}" method="POST">
-                                    <a href="{{ route('pengalamans.edit', $pengalaman->id) }}" class="btn btn-sm btn-primary">UPDATE</a>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('edukasis.destroy', $edukasi->id) }}" method="POST">
+                                    <a href="{{ route('edukasis.edit', $edukasi->id) }}" class="btn btn-sm btn-primary">UPDATE</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">DELETE</button>
