@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Arie Wardhana</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset('assets/img/profile.jpg') }}" alt="..." /></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset('assets/img/profile.jpeg') }}" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -46,12 +46,11 @@
                         West Jakarta, Indonesia · +62 822 9946 1218·
                         <a href="mailto:ariwardhana90@gmail.com">ariwardhana90@gmail.com</a>
                     </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                    <p class="lead mb-5">I was student at SMK Telkom Jakarta, specializing in Software Engineering, which equips me with skills in programming and software design. I have a particular interest in working in the field of front-end development and UI/UX design.</p>
                     <div class="social-icons">
-                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com/in/arie-wardhana-a552a4262/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="https://github.com/Arieeft"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="https://www.instagram.com/arieew_/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </section>
@@ -107,12 +106,12 @@
                             {{ $skills->skill}}
                         </li>
                     </ul>
-                </div>
-                @empty
+                    @empty
                                 <div class="alert alert-danger">
                                     Data not available.
                                 </div>
                     @endforelse
+                </div>
             </section>
             <hr class="m-0" />
             <!-- Awards-->
@@ -126,12 +125,12 @@
                             {{ $sertifikats->sertifikat}}
                         </li>
                     </ul>
-                </div>
-                @empty
+                    @empty
                                 <div class="alert alert-danger">
                                     Data not available.
                                 </div>
                     @endforelse
+                </div>
             </section>
         </div>
         <!-- Bootstrap core JS-->

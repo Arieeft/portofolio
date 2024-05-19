@@ -248,11 +248,11 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  color: #2D7A97;
   text-decoration: underline;
 }
 a:hover {
-  color: var(--bs-link-hover-color);
+  color:  #234956;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -8038,7 +8038,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #2D7A97 !important;
 }
 
 .text-secondary {
@@ -8129,7 +8129,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #2D7A97 !important;
 }
 
 .bg-secondary {
@@ -10938,7 +10938,7 @@ p.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+  background-color: #2D7A97;
 }
 
 .dev-icons {
