@@ -42,7 +42,9 @@
                 <div class="sidebar-sticky">
                     <!-- Foto Profil -->
                 
-                    <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2 mt-5" src="{{ asset('assets/img/profile.jpeg') }}" alt="..." /></span>
+                    <a href="{{ route('welcome') }}">
+                        <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2 mt-5" src="{{ asset('assets/img/profile.jpeg') }}" alt="..." /></span>
+                    </a>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <br><center><h5>Admin Profile</h5></center>
