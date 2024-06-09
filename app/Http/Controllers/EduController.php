@@ -6,6 +6,7 @@ use App\Models\Pengalaman;
 use Illuminate\http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 class EduController extends Controller
 {
@@ -14,10 +15,15 @@ class EduController extends Controller
         return view('edukasis.index');
     }
 
-    public function index(): View
-    {
-        $edukasis = Edukasi::all(); 
-        return view('edukasis.index', ['edukasis' => $edukasis ]);   
+    public function index()
+    {  
+        if (Auth::check()) {
+            $edukasis = Edukasi::all(); 
+            return view('edukasis.index', ['edukasis' => $edukasis ]); 
+            }
+    
+            return redirect()->route('login');  
+         
      }
 
      public function create(): View

@@ -41,7 +41,7 @@
                 <div class="sidebar-sticky">
                     <!-- Foto Profil -->
                 
-                    <a href="{{ route('welcome') }}">
+                    <a href="{{ route('logout') }}">
                         <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2 mt-5" src="{{ asset('assets/img/profile.jpeg') }}" alt="..." /></span>
                     </a>                    <ul class="nav flex-column">
                         <li class="nav-item">

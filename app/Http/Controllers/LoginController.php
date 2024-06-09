@@ -15,36 +15,11 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // $credentials = $request->validate([
-        //     'username' => ['required', 'string'],
-        //     'password' => ['required', 'string'],
-        // ]);
+            $credentials = request()->except(['_token']);     
 
-        // if (auth()->guard('web')->attempt($credentials)) {
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('/pengalamans')->with([
-        //         'success' => 'Login Berhasil',
-        //     ]);
-        // } else {
-        //     return back()->with([
-        //         'error' => 'Username atau password salah.',
-        //     ]);
-        // }
-
-        // $credentitals = $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required'
-        // ]);
-
-        // if (Auth::attempt($credentitals)) {
-        //      }
-            //  $request->session()->regenerate();
-            //  return redirect()->route('pengindex')->withSuccess('You have successfully logged in!');
-            $credentials = request()->except(['_token']);            // dd(Hash::make($request->input('password')));
-            
 
             $tes = Auth::attempt($credentials);
-            dd($tes);
+            // dd($tes);
 
              if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
@@ -52,8 +27,10 @@ class LoginController extends Controller
             } else {
                 echo "error";
             }
-    
-            // return back()->withErrors([
-            //     'username' => 'Your provided credentials do not match in out records.',]);
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect('/')->with('success', 'You have been logged out.');
     }
 }

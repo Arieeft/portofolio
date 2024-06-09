@@ -6,6 +6,7 @@ use Illuminate\http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SkillController extends Controller
 {
@@ -14,12 +15,14 @@ class SkillController extends Controller
         return view('skills.index');
     }
 
-    public function index(): View
+    public function index()
     {
-        //get posts
-        $skills = Skill::all(); 
-        //render view with posts
-        return view('skills.index', ['skills' => $skills ]);   
+        if (Auth::check()) {
+            $skills = Skill::all(); 
+            return view('skills.index', ['skills' => $skills ]);   
+            }
+        
+            return redirect()->route('login');
      }
     
     public function create(): View

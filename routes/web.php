@@ -39,3 +39,5 @@ Route::post('/skill_post', [SkillController::class, 'store'])->name('skpost');
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name("login");
 Route::post('/login/send', [LoginController::class, 'login'])->name("sendLogin");
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

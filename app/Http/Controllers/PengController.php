@@ -6,6 +6,8 @@ use Illuminate\http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class PengController extends Controller
 {
     public function showPengalaman()
@@ -13,14 +15,15 @@ class PengController extends Controller
         return view('pengalamans.index');
     }
 
-    public function index(): View
-    {
-        //get posts
-        $pengalamans = Pengalaman::all(); 
-        //dd($pengalamans);
+    public function index()
+    { 
 
-        //render view with posts
-        return view('pengalamans.index', ['pengalamans' => $pengalamans ]);   
+        if (Auth::check()) {
+        $pengalamans = Pengalaman::all(); 
+        return view('pengalamans.index', ['pengalamans' => $pengalamans ]);
+        }
+
+        return redirect()->route('login');  
      }
     
     public function create(): View

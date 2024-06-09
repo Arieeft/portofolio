@@ -5,6 +5,7 @@ use App\Models\Sertifikat;
 use Illuminate\http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class SertiController extends Controller
@@ -14,14 +15,16 @@ class SertiController extends Controller
         return view('sertifikats.index');
     }
 
-    public function index(): View
+    public function index()
     {
-        //get posts
+        if (Auth::check()) {
         $sertifikats = Sertifikat::all(); 
-        //dd($pengalamans);
 
-        //render view with posts
-        return view('sertifikats.index', ['sertifikats' => $sertifikats ]);   
+        return view('sertifikats.index', ['sertifikats' => $sertifikats ]); 
+        }
+    
+        return redirect()->route('login'); 
+          
      }
     
     public function create(): View
